@@ -1,0 +1,25 @@
+# Using the Servo
+# Make sure you have the Servo checkbox marked!
+
+import machine
+import pyb
+from time import sleep
+
+
+y4 = machine.Pin('Y4')
+
+adc = pyb.ADC(y4)
+
+# The pyboard has four simple servo connections
+servo = pyb.Servo(1)
+
+servo.angle(0, 5000)
+
+sleep(0.5)
+
+servo.angle(90,2000)
+print(adc.read())
+
+servo.angle(-90,3000)
+
+
